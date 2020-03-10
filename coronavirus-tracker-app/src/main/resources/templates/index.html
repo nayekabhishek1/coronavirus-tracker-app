@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Coronavirus Tracker Application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="container container-fluid">
+		<h1>Novel Coronavirus Tracker Application</h1>
+		<p>This application lists the total number of corona virus cases
+			till date across the globe.</p>
+		<div class="container container-fluid">
+			<table
+				class="table table-striped table-dark table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>State/Province</th>
+						<th>Country/Region</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
+						<th>Total cases till date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="list : ${caselist}">
+						<td th:text="${list.state}"></td>
+						<td th:text="${list.country}"></td>
+						<td th:text="${list.latitude}"></td>
+						<td th:text="${list.longitude}"></td>
+						<td th:text="${list.latestTotalCases}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>
